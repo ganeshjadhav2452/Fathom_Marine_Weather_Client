@@ -1,0 +1,14 @@
+.pageViewContainer {
+    display: flex;
+    flex-direction: row;
+
+} 
+
+.sidebarSection{
+   
+}
+
+.pageRenderSection{
+    padding: 24px;
+    width: 100%;
+}
