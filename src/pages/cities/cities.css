@@ -1,103 +1,108 @@
 .app {
-    display: flex;
-    height: 100vh;
-    font-family: Arial, sans-serif;
-  }
-  
-  .cities-section {
-    width: 20%;
-    background-color: #f4f4f4;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .city-list-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-  
-  .add-city-button {
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-  }
-  
-  .cities-list {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .city-item {
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .city-item.active {
-    background-color: #e0e0e0;
-  }
-  
-  .city-item:hover {
-    background-color: #f0f0f0;
-  }
-  
-  .city-name {
-    font-size: 16px;
-  }
-  
-  .city-temp {
-    font-size: 14px;
-    color: #888;
-  }
-  
-  .details-section {
-    width: 80%;
-    padding: 20px;
-    background-color: #f9f9f9;
-  }
-  
-  .details-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-  }
-  
-  .details-header h2 {
-    margin: 0;
-    font-size: 24px;
-  }
-  
-  .bookmark-icon {
-    color: blue;
-    cursor: pointer;
-    font-size: 24px;
-  }
-  
-  .weather-info {
-    color: #555;
-    font-size: 18px;
-  }
-  
-  .weather-info ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .weather-info li {
-    margin: 10px 0;
-  }
-  
+	display: flex;
+	height: 100vh;
+	font-family: Arial, sans-serif;
+}
+.cities-section {
+	width: 20%;
+	background-color: #f4f4f4;
+	padding: 20px;
+	box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+}
+
+.city-list-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
+.add-city-button {
+	background-color: #4caf50;
+	color: white;
+	border: none;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+
+.cities-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	overflow-y: auto;
+	flex-grow: 1;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+.city-item {
+	padding: 10px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+}
+
+.city-item.active {
+	background-color: #e0e0e0;
+}
+
+.city-item:hover {
+	background-color: #f0f0f0;
+}
+
+.city-name {
+	font-size: 16px;
+}
+
+.city-temp {
+	font-size: 14px;
+	color: #888;
+}
+
+.details-section {
+	width: 80%;
+	padding: 20px;
+	background-color: #f9f9f9;
+}
+
+.details-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 10px;
+}
+
+.details-header h2 {
+	margin: 0;
+	font-size: 24px;
+}
+
+.bookmark-icon {
+	color: blue;
+	cursor: pointer;
+	font-size: 24px;
+}
+
+.weather-info {
+	color: #555;
+	font-size: 18px;
+}
+
+.weather-info ul {
+	list-style: none;
+	padding: 0;
+}
+
+.weather-info li {
+	margin: 10px 0;
+}

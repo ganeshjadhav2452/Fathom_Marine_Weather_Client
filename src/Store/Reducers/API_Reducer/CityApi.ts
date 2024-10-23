@@ -26,7 +26,8 @@ export const CityApi = createApi({
                 url: `direct`,
                 params:{
                     appId,
-                    q:cityName
+                    q:cityName,
+                    limit:10
                 }
             }),
         }),

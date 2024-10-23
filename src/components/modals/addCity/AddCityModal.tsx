@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useGetCityInfoQuery } from "../../../Store/Reducers/API_Reducer/CityApi";
 import { useDispatch } from "react-redux";
 import { addCityToSelectedCities } from "../../../Store/Reducers/CityReducer";
@@ -13,9 +13,12 @@ const AddCityModal = () => {
   const dispatch = useDispatch();
 
   const [searchedCity, setSearchedCity] = useState<string>("");
+  const [debouncedCity, setDebouncedCity] = useState<string>(searchedCity);
 
+
+  //getCity API call
   const { data: getCityResponse, isLoading: isGetCityLoading } =
-    useGetCityInfoQuery({ cityName: searchedCity });
+    useGetCityInfoQuery({ cityName: debouncedCity });
 
   const cityChangeHandler = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setSearchedCity(e.target.value);
@@ -26,8 +29,18 @@ const AddCityModal = () => {
     setSearchedCity("");
   };
 
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      setDebouncedCity(searchedCity);
+    }, 300);
+
+    return () => {
+      clearTimeout(timerId);
+    };
+  }, [searchedCity]);
+
   return (
-    <>
+    <div className="city-container">
       <div className="modal-search">
         <input
           type="text"
@@ -62,7 +75,7 @@ const AddCityModal = () => {
       ) : (
         <p>No cities found</p>
       )}
-    </>
+    </div>
   );
 };
 
